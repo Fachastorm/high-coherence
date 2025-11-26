@@ -117,7 +117,13 @@ const getScoreColor = (score: number) => {
                 {{ trait.score }}%
               </UBadge>
             </div>
-            <UProgress :value="trait.score" :color="trait.score >= 80 ? 'success' : trait.score >= 60 ? 'primary' : 'warning'" size="sm" />
+            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                class="h-full rounded-full transition-all"
+                :class="trait.score >= 80 ? 'bg-emerald-500' : trait.score >= 60 ? 'bg-primary-500' : 'bg-amber-500'"
+                :style="{ width: `${trait.score}%` }"
+              />
+            </div>
             <p class="text-xs text-gray-500 mt-2 max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-300">
               {{ trait.description }}
             </p>

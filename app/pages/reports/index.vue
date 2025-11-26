@@ -107,7 +107,13 @@ const insights = [
                 <p class="text-xs text-gray-500">avg score</p>
               </div>
             </div>
-            <UProgress :value="dept.avgScore" :color="dept.avgScore >= 75 ? 'success' : dept.avgScore >= 65 ? 'primary' : 'warning'" size="sm" />
+            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                class="h-full rounded-full"
+                :class="dept.avgScore >= 75 ? 'bg-emerald-500' : dept.avgScore >= 65 ? 'bg-primary-500' : 'bg-amber-500'"
+                :style="{ width: `${dept.avgScore}%` }"
+              />
+            </div>
           </div>
         </div>
       </UCard>
@@ -124,7 +130,12 @@ const insights = [
               <span class="text-sm text-gray-600">{{ trait.trait.split('-')[0] }}</span>
               <span class="text-sm font-semibold text-gray-900">{{ trait.score }}%</span>
             </div>
-            <UProgress :value="trait.score" color="primary" size="xs" />
+            <div class="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                class="h-full rounded-full bg-primary-500"
+                :style="{ width: `${trait.score}%` }"
+              />
+            </div>
           </div>
         </div>
 

@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Clean neutral theme with subtle blue accent */
+:root {
+  --color-primary-50: 239 246 255;
+  --color-primary-100: 219 234 254;
+  --color-primary-200: 191 219 254;
+  --color-primary-300: 147 197 253;
+  --color-primary-400: 96 165 250;
+  --color-primary-500: 59 130 246;
+  --color-primary-600: 37 99 235;
+  --color-primary-700: 29 78 216;
+  --color-primary-800: 30 64 175;
+  --color-primary-900: 30 58 138;
+  --color-primary-950: 23 37 84;
+}
+
+/* Clean light background */
+body {
+  @apply bg-gray-50 min-h-screen;
+}
+
+/* Subtle card styling */
+.glass {
+  @apply bg-white border border-gray-200 shadow-sm rounded-xl;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent;
+}
+
+/* Fade in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+/* Pulse glow - subtle version */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}

@@ -58,6 +58,7 @@ const userMenu = [[
 
           <template #trailing>
             <div class="flex items-center gap-2">
+              <UColorModeButton />
               <UButton color="neutral" variant="ghost" icon="i-lucide-bell" size="sm" :ui="{ base: 'relative' }">
                 <span class="absolute top-1 right-1 size-2 bg-red-500 rounded-full"></span>
               </UButton>

@@ -47,17 +47,20 @@ const getScoreColor = (score: number) => {
     <!-- Header -->
     <div class="flex items-center justify-between">
       <div>
-        <h1 class="text-2xl font-bold text-white">Welcome back, {{ userProfile.name.split(' ')[0] }}</h1>
-        <p class="text-white/70 mt-1">Here's your development overview</p>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Welcome back, {{ userProfile.name.split(' ')[0] }}</h1>
+        <p class="text-gray-600 dark:text-white/70 mt-1">Here's your development overview</p>
       </div>
-      <UButton
-        to="/coach"
-        icon="i-lucide-sparkles"
-        size="lg"
-        class="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
-      >
-        Talk to AI Coach
-      </UButton>
+      <div class="flex items-center gap-3">
+        <UColorModeButton size="lg" />
+        <UButton
+          to="/coach"
+          icon="i-lucide-sparkles"
+          size="lg"
+          class="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+        >
+          Talk to AI Coach
+        </UButton>
+      </div>
     </div>
 
     <!-- Quick Stats -->
